@@ -59,12 +59,6 @@ public class Application {
 
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
-
-    PlayerState myPlayer = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
-
-    if(arenaUpdate.arena.dimse)
-
-    arenaUpdate.arena.state.values().forEach(it -> System.out.println(it.toString()));
     String[] commands = new String[]{"F", "R", "L", "T"};
     int i = new Random().nextInt(4);
     return commands[i];
